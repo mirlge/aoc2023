@@ -1,4 +1,5 @@
 pub mod pt1;
+pub mod pt2;
 
 const INPUT: &str = "Game 1: 1 green, 2 red, 6 blue; 4 red, 1 green, 3 blue; 7 blue, 5 green; 6 blue, 2 red, 1 green
 Game 2: 1 green, 17 red; 1 blue, 6 red, 7 green; 2 blue, 4 red, 7 green; 1 green, 6 red, 2 blue
@@ -102,7 +103,7 @@ Game 99: 2 green, 9 red, 1 blue; 3 green, 1 blue, 14 red; 5 green, 6 blue; 1 blu
 Game 100: 4 green, 4 blue, 15 red; 3 green, 1 red, 13 blue; 5 green, 5 blue, 10 red";
 
 pub fn main() {
-    println!("{}", pt1::calculate_answer(INPUT.to_string()));
+    println!("{}", pt2::calculate_answer(INPUT.to_string()));
 }
 
 #[cfg(test)]
@@ -118,6 +119,14 @@ Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green";
         assert_eq!(
             crate::d2::pt1::calculate_answer(EXAMPLE_INPUT.to_string()),
             8
+        )
+    }
+
+    #[test]
+    fn pt2_example_input() {
+        assert_eq!(
+            crate::d2::pt2::calculate_answer(EXAMPLE_INPUT.to_string()),
+            2286
         )
     }
 }
