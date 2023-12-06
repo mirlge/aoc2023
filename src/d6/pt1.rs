@@ -1,4 +1,4 @@
-pub fn calculate_answer(input: String) -> i32 {
+pub fn calculate_answer(input: String) -> i64 {
     let input_vec: Vec<_> = input
         .split('\n')
         .map(|x| {
@@ -6,7 +6,7 @@ pub fn calculate_answer(input: String) -> i32 {
                 .nth(1)
                 .unwrap()
                 .split(' ')
-                .map(|y| y.parse::<i32>().unwrap())
+                .map(|y| y.parse::<i64>().unwrap())
         })
         .collect();
     input_vec[0].clone().enumerate().fold(1, |acc, (i, x)| {
