@@ -816,8 +816,8 @@ ZZZ = (ZZZ, ZZZ)";
     #[test]
     fn pt1_example_input() {
         assert_eq!(
-            crate::d7::pt1::calculate_answer(EXAMPLE_INPUT.to_string()),
-            6440
+            crate::d8::pt1::calculate_answer(EXAMPLE_INPUT.to_string()),
+            2
         )
     }
 }
