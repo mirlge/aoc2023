@@ -145,7 +145,7 @@ const EXAMPLE_INPUT: &str = "...........
 ...........";
 
 pub fn main() {
-    println!("{}", pt1::calculate_answer(EXAMPLE_INPUT.to_string()));
+    println!("{}", pt1::calculate_answer(EXAMPLE_INPUT.to_string(), 16));
 }
 
 #[cfg(test)]
@@ -153,7 +153,7 @@ mod tests {
     #[test]
     fn pt1_example_input() {
         assert_eq!(
-            crate::d21::pt1::calculate_answer(crate::d21::EXAMPLE_INPUT.to_string()),
+            crate::d21::pt1::calculate_answer(crate::d21::EXAMPLE_INPUT.to_string(), 16),
             16
         );
     }
