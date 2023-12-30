@@ -1,4 +1,5 @@
 pub mod pt1;
+pub mod pt2;
 
 const INPUT: &str = "LRRLRLRRRLLRLRRRLRLLRLRLRRLRLRRLRRLRLRLLRRRLRRLLRRRLRRLRRRLRRLRLRLLRRLRLRRLLRRRLLLRRRLLLRRLRLRRLRLLRRRLRRLRRRLRRLLRRRLRRRLRRRLRLRRLRLRRRLRRRLRRLRLRRLLRRRLRRLLRRLRRLRLRLRRRLRLLRRRLRRLRRRLLRRLLLLLRRRLRRLLLRRRLRRRLRRLRLLLLLRLRRRLRRRLRLRRLLLLRLRRRLLRRRLRRRLRLRLRRLRRLRRLRLRLLLRLRRLRRLRRRLRRRLLRRRR
 
@@ -798,12 +799,12 @@ BJR = (VKX, JCV)
 CRN = (BCX, DTB)";
 
 pub fn main() {
-    println!("{}", pt1::calculate_answer(INPUT.to_string()));
+    println!("{}", pt2::calculate_answer(INPUT.to_string()));
 }
 
 #[cfg(test)]
 mod tests {
-    const EXAMPLE_INPUT: &str = "RL
+    const PT1_EXAMPLE_INPUT: &str = "RL
 
 AAA = (BBB, CCC)
 BBB = (DDD, EEE)
@@ -812,12 +813,30 @@ DDD = (DDD, DDD)
 EEE = (EEE, EEE)
 GGG = (GGG, GGG)
 ZZZ = (ZZZ, ZZZ)";
+    const PT2_EXAMPLE_INPUT: &str = "LR
+
+11A = (11B, XXX)
+11B = (XXX, 11Z)
+11Z = (11B, XXX)
+22A = (22B, XXX)
+22B = (22C, 22C)
+22C = (22Z, 22Z)
+22Z = (22B, 22B)
+XXX = (XXX, XXX)";
 
     #[test]
     fn pt1_example_input() {
         assert_eq!(
-            crate::d8::pt1::calculate_answer(EXAMPLE_INPUT.to_string()),
+            crate::d8::pt1::calculate_answer(PT1_EXAMPLE_INPUT.to_string()),
             2
+        )
+    }
+
+    #[test]
+    fn pt2_example_input() {
+        assert_eq!(
+            crate::d8::pt2::calculate_answer(PT2_EXAMPLE_INPUT.to_string()),
+            6
         )
     }
 }
