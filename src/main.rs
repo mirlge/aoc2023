@@ -1,5 +1,5 @@
-mod d21;
+mod d25;
 
 fn main() {
-    d21::main();
+    d25::main();
 }
