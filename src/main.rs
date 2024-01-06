@@ -1,5 +1,5 @@
-mod d8;
+mod d23;
 
 fn main() {
-    d8::main();
+    d23::main();
 }
