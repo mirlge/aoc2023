@@ -1,9 +1,9 @@
-use std::collections::{HashMap, VecDeque};
+use std::collections::{BTreeMap, VecDeque};
 
 pub fn calculate_answer(input: String) -> i64 {
     let input_split = input.split('\n');
     let (map, max_loc) = input_split.clone().enumerate().fold(
-        (HashMap::<(i64, i64), char>::new(), (0, 0)),
+        (BTreeMap::<(i64, i64), char>::new(), (0, 0)),
         |(map, max_loc), (i, x)| {
             x.char_indices()
                 .fold((map, max_loc), |(xmap, xmax_loc), (xi, y)| {
@@ -33,6 +33,12 @@ pub fn calculate_answer(input: String) -> i64 {
     while queue.len() > 0 {
         match queue.pop_back() {
             Some((new_steps, location)) => {
+                //println!("[DEBUG] length of queue: {}", queue.len());
+                //println!("[DEBUG] queue: {:?}", queue);
+                //println!(
+                //    "[DEBUG] Char at location: {}",
+                //    map.get(&location).unwrap_or(&' ')
+                //);
                 if location.0 < 0
                     || location.1 < 0
                     || location.0 > max_loc.0
@@ -73,7 +79,9 @@ pub fn calculate_answer(input: String) -> i64 {
                 //);
                 //println!("[DEBUG] Current result: {}", result);
             }
-            None => (),
+            None => {
+                ();
+            }
         }
     }
     result
