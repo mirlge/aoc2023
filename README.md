@@ -1,2 +1,1 @@
-# aoc2023
-Solutions for Advent of Code 2023
+# [Actual repo](https://codeberg.org/mirge/aoc2023)
